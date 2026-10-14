@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  padding: 8px 24px;
+  box-shadow: 0 6px 16px rgba(25, 25, 25, 0.06);
+}
+
+.header .container-fluid {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+#header_logo {
+  width: 50px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+#header_logo:hover {
+  transform: rotate(20deg);
+}
+
+/* Navigation */
+.menu {
+  margin: 0;
+  padding: 0;
+  gap: 20px !important;
+}
+
+.menu .nav-link {
+  padding: 8px 0;
+}
+
+.menu li {
+  border-bottom: 2px solid transparent;
+  margin-right: 10px;
+}
+
+.menu li:hover {
+  border-bottom-color: salmon;
+  margin-bottom: -10px;
+}
+
+.menu li a:hover {
+  color: salmon;
+}

@@ -1,32 +1,37 @@
 import { Link } from "react-router-dom";
+import sigil from "../assets/Candle-white.svg";
+import "../styles/Header.css";
 
+// Define an array of navigation links with their names and paths
 const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Art", path: "/art" },
-    { name: "Novel", path: "/novel" },
-    { name: "AI", path: "/ai" }
+    { label: "Home", path: "/" },
+    { label: "Art", path: "/art" },
+    { label: "Novel", path: "/novel" },
+    { label: "AI", path: "/ai" }
 ];
 
 function Header() {
 
     return (
         // Header template with navigation links
-        <header className="navbar container-fluid">
-            <h1 className="navbar-brand">
-                <Link to="/" className="nav-link">Candles</Link>
-            </h1>
-            <nav>
-                <ul className="nav">
-                    {navLinks.map((link) => (
-                        <li className="nav-item" key={link.name}>
-                            <Link to={link.path} className="nav-link">
-                                {link.name}
+        <nav className="header navbar" data-bs-theme="light">
+            <div className="container-fluid">
+                <Link to="/">
+                    <img src={sigil} alt="Candle Emblem" width={50} id="header_logo"/>
+                </Link>
+
+                <ul className="menu navbar-nav flex-row gap-4">
+                    {navLinks.map((item) => (
+                        <li key={item.label} className="nav-item">
+                            <Link to={item.link} className="nav-link">
+                                {item.label}
                             </Link>
                         </li>
                     ))}
                 </ul>
-            </nav>
-        </header>
+            </div>
+        </nav>
+
     );
 }
 
